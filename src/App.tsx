@@ -286,7 +286,7 @@ export default function App() {
       <header className="border-b border-[#dfdad0] bg-[#edeae3] pt-8 pb-6 px-4 md:px-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div>
-            <h1 className="font-serif text-3xl font-bold text-[#2c2718] tracking-tight flex items-center gap-3">
+            <h1 className="font-serif text-3xl font-bold text-[#132238] tracking-tight flex items-center gap-3">
               <Layers id="app-logo" className="w-8 h-8 text-[#ff7a00] hidden sm:block" />
               個人化智慧 Kanban 看板
             </h1>
@@ -297,7 +297,7 @@ export default function App() {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
             {/* API Key Setting Block */}
             <div className="flex items-center gap-2 bg-white border border-[#dfdad0] rounded-[6px] px-3 py-1.5 shadow-xs">
-              <span className="text-xs font-bold text-[#5c5647] flex items-center gap-1">
+              <span className="text-xs font-bold text-[#2e435e] flex items-center gap-1">
                 <Key className="w-3.5 h-3.5 text-[#ff7a00]" strokeWidth={2.2} />
                 Gemini 金鑰：
               </span>
@@ -306,12 +306,12 @@ export default function App() {
                 value={userApiKey}
                 onChange={(e) => handleSaveApiKey(e.target.value)}
                 placeholder="輸入您的 API Key"
-                className="bg-transparent border-none text-xs text-[#2c2718] focus:none outline-none w-36 placeholder-[#b0ab9f]"
+                className="bg-transparent border-none text-xs text-[#132238] focus:none outline-none w-36 placeholder-[#b0ab9f]"
               />
               <button
                 type="button"
                 onClick={() => setShowKey(!showKey)}
-                className="text-[#7d7768] hover:text-[#2c2718] transition-colors p-0.5"
+                className="text-[#7d7768] hover:text-[#132238] transition-colors p-0.5"
                 title={showKey ? "隱藏金鑰" : "顯示金鑰"}
               >
                 {showKey ? <EyeOff className="w-3.5 h-3.5" /> : <Eye className="w-3.5 h-3.5" />}
@@ -325,7 +325,7 @@ export default function App() {
 
             <button
               onClick={handleResetBoard}
-              className="text-xs bg-[#f5f3ee] hover:bg-[#dfdad0] text-[#5c5647] font-medium py-2 px-3 border border-[#dfdad0] rounded-[6px] flex items-center gap-1.5 transition-colors shrink-0"
+              className="text-xs bg-[#f5f3ee] hover:bg-[#dfdad0] text-[#2e435e] font-medium py-2 px-3 border border-[#dfdad0] rounded-[6px] flex items-center gap-1.5 transition-colors shrink-0"
               title="將看板復原為預設範例"
             >
               <RefreshCw className="w-3.5 h-3.5" />
@@ -348,7 +348,7 @@ export default function App() {
                 <Sparkles className="w-4 h-4 text-[#ff7a00]" />
               </div>
               <div>
-                <h3 className="font-serif font-bold text-lg text-[#2c2718]">AI 看板顧問諮詢</h3>
+                <h3 className="font-serif font-bold text-lg text-[#132238]">AI 看板顧問諮詢</h3>
                 <p className="text-xs text-[#7d7768]">輸入您的任務管理疑難，Gemini 系統會讀取您目前的看板卡片直接進行診斷</p>
               </div>
             </div>
@@ -365,7 +365,7 @@ export default function App() {
                   }
                 }}
                 placeholder="例如：幫我看一下目前任務，如何安排先後順序或拆解 backlog？"
-                className="flex-1 px-4 py-3 border border-[#dfdad0] rounded-[6px] text-sm focus:border-[#ff7a00] focus:outline focus:outline-[#ff7a00] transition-all bg-[#fdfdfc] text-[#333333]"
+                className="flex-1 px-4 py-3 border border-[#dfdad0] rounded-[6px] text-sm focus:border-[#ff7a00] focus:outline focus:outline-[#ff7a00] transition-all bg-[#fdfdfc] text-[#1a2e40]"
               />
               <button
                 onClick={() => handleConsult()}
@@ -397,7 +397,7 @@ export default function App() {
                   key={idx}
                   onClick={() => handleConsult(chip)}
                   disabled={loading}
-                  className="text-xs bg-[#f5f3ee] hover:bg-[#edeae3] text-[#5c5647] hover:text-[#2c2718] py-1.5 px-3 border border-[#dfdad0] rounded-[6px] transition-colors text-left"
+                  className="text-xs bg-[#f5f3ee] hover:bg-[#edeae3] text-[#2e435e] hover:text-[#132238] py-1.5 px-3 border border-[#dfdad0] rounded-[6px] transition-colors text-left"
                 >
                   {chip}
                 </button>
@@ -413,7 +413,7 @@ export default function App() {
                 <section key={col.key} className="bg-[#edeae3] rounded-[6px] p-5 flex flex-col min-h-[500px]">
                   {/* Column Header */}
                   <div className="flex justify-between items-center pb-4 mb-4 border-b border-[#dfdad0]">
-                    <h2 className="font-serif font-bold text-lg text-[#2c2718]">{col.title}</h2>
+                    <h2 className="font-serif font-bold text-lg text-[#132238]">{col.title}</h2>
                     <span className={`counter-badge ${col.badgeStyle} text-white text-xs font-bold px-2.5 py-0.5 rounded-[6px]`}>
                       {colTasks.length}
                     </span>
@@ -437,7 +437,7 @@ export default function App() {
                             transition={{ duration: 0.18 }}
                             className="bg-white border border-[#dfdad0] rounded-[6px] p-4 flex flex-col gap-3 group relative"
                           >
-                            <p className="text-sm font-medium text-[#4a4538] leading-relaxed break-words whitespace-pre-wrap">
+                            <p className="text-sm font-medium text-[#1f344d] leading-relaxed break-words whitespace-pre-wrap">
                               {task.text}
                             </p>
 
@@ -449,7 +449,7 @@ export default function App() {
                                   type="button"
                                   onClick={() => handleMove(task.id, "left")}
                                   disabled={col.key === 0}
-                                  className="bg-[#edeae3] disabled:opacity-20 disabled:cursor-not-allowed hover:bg-[#dfdad0] text-[#5c5647] hover:text-[#2c2718] p-1 rounded-[6px] transition-colors"
+                                  className="bg-[#edeae3] disabled:opacity-20 disabled:cursor-not-allowed hover:bg-[#dfdad0] text-[#2e435e] hover:text-[#132238] p-1 rounded-[6px] transition-colors"
                                   title="往左移一欄"
                                 >
                                   <ArrowLeft className="w-3.5 h-3.5" />
@@ -459,7 +459,7 @@ export default function App() {
                                   type="button"
                                   onClick={() => handleMove(task.id, "right")}
                                   disabled={col.key === 2}
-                                  className="bg-[#edeae3] disabled:opacity-20 disabled:cursor-not-allowed hover:bg-[#dfdad0] text-[#5c5647] hover:text-[#2c2718] p-1 rounded-[6px] transition-colors"
+                                  className="bg-[#edeae3] disabled:opacity-20 disabled:cursor-not-allowed hover:bg-[#dfdad0] text-[#2e435e] hover:text-[#132238] p-1 rounded-[6px] transition-colors"
                                   title="往右移一欄"
                                 >
                                   <ArrowRight className="w-3.5 h-3.5" />
@@ -498,7 +498,7 @@ export default function App() {
                     <button
                       type="button"
                       onClick={() => handleAddTask(col.key)}
-                      className="bg-[#e0d6c5] hover:bg-[#d1c4b0] text-[#4a4538] hover:text-[#2c2718] border border-[#dfdad0] font-bold text-xs py-2 px-3 rounded-[6px] transition-colors"
+                      className="bg-[#e0d6c5] hover:bg-[#d1c4b0] text-[#1f344d] hover:text-[#132238] border border-[#dfdad0] font-bold text-xs py-2 px-3 rounded-[6px] transition-colors"
                     >
                       新增
                     </button>
@@ -515,7 +515,7 @@ export default function App() {
             <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#dfdad0]">
               <div className="flex items-center gap-2">
                 <Sparkles className="w-5 h-5 text-[#ff7a00]" />
-                <h3 className="font-serif font-bold text-lg text-[#2c2718]">AI 顧問解答</h3>
+                <h3 className="font-serif font-bold text-lg text-[#132238]">AI 顧問解答</h3>
               </div>
               {loading && <Loader2 className="w-4 h-4 animate-spin text-[#ff7a00]" />}
             </div>
@@ -534,7 +534,7 @@ export default function App() {
                 {!cleanAnswer && !loading && !errorMsg ? (
                   <div className="flex flex-col items-center justify-center text-center py-16 px-4">
                     <HelpCircle className="w-12 h-12 text-[#dfdad0] mb-3" />
-                    <h4 className="text-sm font-bold text-[#4a4538] mb-1">尚未發提問</h4>
+                    <h4 className="text-sm font-bold text-[#1f344d] mb-1">尚未發提問</h4>
                     <p className="text-xs text-[#7d7768] max-w-xs">
                       在左側的輸入框中鍵入您的工作盲點或疑惑，或是點擊快速提問晶片，AI 助理會根據您的任務清單，在右邊生成解答！
                     </p>
@@ -542,11 +542,11 @@ export default function App() {
                 ) : loading ? (
                   <div className="py-16 flex flex-col items-center justify-center text-center gap-3">
                     <Loader2 className="w-10 h-10 animate-spin text-[#ff7a00]" />
-                    <p className="text-xs font-bold text-[#4a4538] animate-pulse">正在閱讀您的任務卡片並組織解答中...</p>
+                    <p className="text-xs font-bold text-[#1f344d] animate-pulse">正在閱讀您的任務卡片並組織解答中...</p>
                     <p className="text-[11px] text-[#7d7768] max-w-[250px]">Gemini 透過當前狀態幫您精算最高效能的戰術指引</p>
                   </div>
                 ) : (
-                  <div className="prose prose-sm prose-stone max-w-none text-[#4a4538] leading-relaxed">
+                  <div className="prose prose-sm prose-indigo max-w-none text-[#1f344d] leading-relaxed">
                     {/* Render standard markdown perfectly */}
                     <div className="markdown-body text-sm space-y-4">
                       <ReactMarkdown>{cleanAnswer}</ReactMarkdown>
@@ -560,7 +560,7 @@ export default function App() {
                 <div className="mt-8 pt-4 border-t border-dashed border-[#dfdad0] bg-[#fbf5e8]/40 p-4 rounded-[6px]">
                   <div className="flex items-center gap-1.5 mb-2.5">
                     <CheckCircle className="w-4 h-4 text-[#7e9c78]" />
-                    <span className="text-xs font-bold text-[#2c2718]">AI 推薦執行新卡片：</span>
+                    <span className="text-xs font-bold text-[#132238]">AI 推薦執行新卡片：</span>
                   </div>
                   <p className="text-[11px] text-[#7d7768] mb-3">點擊下方任一項目，免打字直接一鍵配置到您看板的「待辦」：</p>
                   <div className="space-y-2">
@@ -568,7 +568,7 @@ export default function App() {
                       <button
                         key={sIdx}
                         onClick={() => handleAddSuggestedTask(st.text)}
-                        className="w-full text-left bg-white hover:bg-[#fff9f0] border border-[#dfdad0] hover:border-[#ff7a00] p-3 rounded-[6px] transition-all flex items-start gap-2 group text-xs text-[#4a4538] font-medium"
+                        className="w-full text-left bg-white hover:bg-[#fff9f0] border border-[#dfdad0] hover:border-[#ff7a00] p-3 rounded-[6px] transition-all flex items-start gap-2 group text-xs text-[#1f344d] font-medium"
                       >
                         <Plus className="w-3.5 h-3.5 text-[#ff7a00] mt-0.5 flex-shrink-0 group-hover:scale-115 transition-transform" />
                         <span className="flex-1 leading-normal">{st.text}</span>
@@ -592,7 +592,7 @@ export default function App() {
                         setAiAnswer(c.answer);
                         parseAIAnswer(c.answer);
                       }}
-                      className="w-full text-left text-xs bg-[#f5f3ee] hover:bg-[#edeae3] p-2 border border-[#dfdad0] rounded-[6px] transition-colors truncate text-[#5c5647] font-medium block"
+                      className="w-full text-left text-xs bg-[#f5f3ee] hover:bg-[#edeae3] p-2 border border-[#dfdad0] rounded-[6px] transition-colors truncate text-[#2e435e] font-medium block"
                       title={c.question}
                     >
                       <span className="text-[10px] text-[#7d7768] mr-1.5">[{c.createdAt}]</span>
